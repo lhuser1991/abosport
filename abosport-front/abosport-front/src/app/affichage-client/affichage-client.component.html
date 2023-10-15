@@ -1,0 +1,26 @@
+<h2>Liste des clients</h2>
+
+<table class="table table-striped" *ngIf="!clientSelectioneStatus">
+    <thead>
+        <tr>
+            <th class="text-center">Nom</th>
+            <th class="text-center">Prenom</th>
+            <th class="text-center">Age</th>
+            <th class="text-center">Profession</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clients">
+            <td class="text-center">{{client.nom}}</td>
+            <td class="text-center">{{client.prenom}}</td>
+            <td class="text-center">{{client.age}}</td>
+            <td class="text-center">{{client.profession}}</td>
+            <td class="text-center">
+                <button (click) = "voirAbonnement(client.id)" class="btn btn-info button">Voir les abonnements</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- <app-affichage-client-abonnement *ngIf="clientSelectioneStatus" [client] = "clientSelectione"></app-affichage-client-abonnement> -->
+<app-affichage-client-abonnement *ngIf="clientSelectioneStatus"></app-affichage-client-abonnement>
